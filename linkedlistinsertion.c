@@ -117,9 +117,9 @@ int main(){
     
 
     //head = insertAtFirst(head,56);
-    //head = insertAtIndex(head,56,1);
+    head = insertAtIndex(head,56,1);
     //head = insertAtLast(head,56);
-    head = insertAtNode(head,second,56);
+   // head = insertAtNode(head,second,56);
     printf("\nAfetr inserton\n");
     traversel(head);
 
