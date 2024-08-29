@@ -54,6 +54,25 @@ struct Node * deleteAtIndex(struct Node *head,int index)
     p->next = p->next->next;
     free(ptr);
     return head;
+}
+
+struct Node * deleteValue(struct Node *head,int value)
+{
+    
+    
+
+    struct Node *p =head;
+    while(p->data !=value && p->next !=NULL){
+        p=p->next;
+    }
+ 
+
+    if(p->data ==value){
+    struct Node *ptr=p->next;
+    p->next = p->next->next;
+    free(ptr);
+   }
+    return head;
 
 };
 
@@ -108,7 +127,8 @@ int main(){
     //head = deleteFirst(head);
    // head =  deleteAtIndex(head,1);
     //head = deleteLast(head);
-    head = deleteAtNode(head,second);
+    //head = deleteAtNode(head,second);
+    head=deleteValue(head,14);
     printf("\nAfetr Deletion\n");
     traversel(head);
 
