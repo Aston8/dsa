@@ -28,9 +28,10 @@ int isfull(struct stack *ptr){
 void push(struct stack *ptr,int val){
     if(isfull(ptr)){
         printf("stack overflow\n");
-    }else
+    }else{
     ptr->top++;
     ptr->arr[ptr->top]=val;
+    }
 
 }
 
@@ -45,6 +46,19 @@ int pop(struct stack *ptr){
         return val;
     }
 }
+
+int peek(struct stack *ptr){
+    if(isempty(ptr))
+    {
+        printf("stack is empty\n");
+        return -1;
+    }else{
+        return ptr->arr[ptr->top];
+    }
+}
+   
+      
+
 
 
 
