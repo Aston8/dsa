@@ -87,14 +87,13 @@ char *infixToPostfix(char *infix){
                 i++,j++;
            }
            else{
-                if(precidence(infix[i]) > precidence(stacktop(sp))){
-                    push(sp,infix[i]);
-                    i++;
+                while(!isempty(sp) && precidence(infix[i]) <= precidence(stacktop(sp))){
+                   postfix[j]=pop(sp);
+                   j++;
                 }
-                else{
-                    postfix[j] =pop(sp);
-                    j++;
-                }
+                push(sp,infix[i]);
+                i++;
+                
            }    
            
         }
