@@ -36,6 +36,7 @@ void enqueue(struct queue *q,int val){
 int dequeue(struct queue *q){
     if(isempty(q)){
         printf("queue is empty");
+        return -1;
     }else{
         int a;
         q->f++;
