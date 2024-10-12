@@ -113,7 +113,7 @@ char *infixToPostfix(char *infix){
 
 
 int main(){
-    char * infix ="a-b+t/6";
+    char * infix ="a-b+t/c";
     printf("postfix is %s",infixToPostfix(infix));
         
     return 0;
