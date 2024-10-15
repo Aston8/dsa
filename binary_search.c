@@ -122,7 +122,7 @@ int main(){
 
     //iterative search for BST
     struct Node *a= iterativesearch(p,1);
-    if (n != NULL)
+    if (a != NULL)
     {
         printf("found %d\n",a->data);
     }
