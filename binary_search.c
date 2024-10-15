@@ -16,22 +16,8 @@ struct Node* createNode(int data) {
     return n;//finally returning the created node
 }
 
+//gives data in ascending order for BST
 
-void preOrder(struct Node* root){
-    if(root!=NULL){
-        printf("%d ", root->data);
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-}
-void postOrder(struct Node* root){
-    if(root!=NULL){
-        postOrder(root->left);
-        postOrder(root->right);
-        printf("%d ", root->data);
-        
-    }
-}
 void InOrder(struct Node* root){
     if(root!=NULL){
         InOrder(root->left);
@@ -42,7 +28,7 @@ void InOrder(struct Node* root){
     }
 }
 
-
+//checking if it is BST or not
 int isBST(struct Node* root){
     static struct Node* prev=NULL;
     if(root!=NULL){
@@ -62,6 +48,8 @@ int isBST(struct Node* root){
 
 }
 
+
+//searching for a value in BST
 struct Node *search(struct Node * root,int key){
     if(root==NULL){
         return NULL;
@@ -77,6 +65,25 @@ struct Node *search(struct Node * root,int key){
     }
 }
 
+
+
+//iterative search for BST
+struct Node *iterativesearch(struct Node * root,int key){
+    while (root!=NULL)
+    {
+       if(root->data==key){
+           return root;
+       }
+       else if(root->data<key){
+           root=root->right;
+       }
+       else{
+           root=root->left;
+       }
+    }
+    return NULL;
+    
+}
 
 
 
@@ -101,16 +108,28 @@ int main(){
     printf("\n");
 
 
+     
      //searching for a value in BST
-
     struct Node *n= search(p,1);
     if (n != NULL)
     {
-        printf("found %d",n->data);
+        printf("found %d\n",n->data);
     }
-    else
-        printf("element not found");
+    else{
+        printf("element not found\n");
+    }
     
+
+    //iterative search for BST
+    struct Node *a= iterativesearch(p,1);
+    if (n != NULL)
+    {
+        printf("found %d\n",a->data);
+    }
+    else{
+        printf("element not found\n");
+    }
+   
     return 0;
 
 
