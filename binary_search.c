@@ -62,6 +62,23 @@ int isBST(struct Node* root){
 
 }
 
+struct Node *search(struct Node * root,int key){
+    if(root==NULL){
+        return NULL;
+    }
+    if(root->data == key){
+        return root;
+    }
+    else if(root->data < key){
+        return search(root->right,key);
+    }
+    else{
+        return search(root->left,key);
+    }
+}
+
+
+
 
 int main(){
     //using function
@@ -78,13 +95,23 @@ int main(){
     p1->left = p3;
     p1->right = p4;
 
-    //preOrder(p);
-    //printf("\n");
-    //postOrder(p);
-    //printf("\n");
-    InOrder(p);
+    InOrder(p);//gives data in ascending order for BST
     printf("\n");
-    printf("%d",isBST(p));
+    printf("%d",isBST(p));//checking if it is BST or not
+    printf("\n");
+
+
+     //searching for a value in BST
+
+    struct Node *n= search(p,1);
+    if (n != NULL)
+    {
+        printf("found %d",n->data);
+    }
+    else
+        printf("element not found");
     
     return 0;
+
+
 }
