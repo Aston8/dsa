@@ -8,16 +8,16 @@ char *match();
 
 int main(){
     printf("Enter the string");
-    gets(str);
-     //fgets(str,sizeof(str),stdin);
+   // gets(str);
+     fgets(str,sizeof(str),stdin);
 
     printf("Enter the search String");
-    // fgets(s,sizeof(s),stdin);
-    gets(s);
+     fgets(s,sizeof(s),stdin);
+    //gets(s);
 
     printf("Enter the replace string");
-//    fgets(r,sizeof(r),stdin);
-gets(r);
+fgets(r,sizeof(r),stdin);
+//gets(r);
   
 
     match();
